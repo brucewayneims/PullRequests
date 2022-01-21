@@ -5,8 +5,8 @@ function StringIsNullOrEmpty(string) {
         return true;
     }
     else {
-
-        if (string.length < 1) {
+        // better checking of empty strings
+        if (string.length < 1 || string == "") {
             return true;
         }
         else {
@@ -64,7 +64,7 @@ function ValidateDateWmin(cuerda, min) {
 
 }
 function ValidateOneDate(inputDate) {
-    //this function will return a bool for a valid date input 
+    //this function will return a bool for a valid date input
     var dateformat = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
     var IsItAValidDate = true;
 
@@ -99,7 +99,7 @@ function ValidateOneDate(inputDate) {
 
                 //12 > 30
                 if (dd > ListofDays[mm - 1]) {
-                    //alert('Invalid date format!');                        
+                    //alert('Invalid date format!');
                     //return false;
                     IsItAValidDate = false;
                 }
@@ -164,7 +164,7 @@ function ValidateOneDate(inputDate) {
 
                     //12 > 30
                     if (dd > ListofDays[mm - 1]) {
-                        //alert('Invalid date format!');                        
+                        //alert('Invalid date format!');
                         //return false;
                         IsItAValidDate = false;
                     }
@@ -388,7 +388,7 @@ function ConvertDateddMMyyyyToJsDate(ddmmyyyStr) {
     return new Date(elanoOn, elmesOn, eldiaOn);
 }
 function RecalculateLineHireDays(onHireDateStr, offHireDateStr) {
-    //should received 2 valid dates in format dd/mm/yyyy and return an int 
+    //should received 2 valid dates in format dd/mm/yyyy and return an int
     //as the total days on hire
 
     let recalDays = 0;
@@ -402,7 +402,7 @@ function RecalculateLineHireDays(onHireDateStr, offHireDateStr) {
     return recalDays;
 }
 function CalculaTeDaysDifferenceJSdates(onHireDateJS, offHireDateJS) {
-    //should received 2 valid dates in format dd/mm/yyyy and return an int 
+    //should received 2 valid dates in format dd/mm/yyyy and return an int
     //as the total days on hire
 
     let recalDays = 0;
